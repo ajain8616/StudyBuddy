@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@drawable/background_gradient"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Account Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileEmail"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_account" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileEmail"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Two-step verification"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Avatar Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileAvatar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_avatar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileAvatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileAvatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Avatar"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileAvatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Upload your avatar"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Privacy Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfilePrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfilePrivacy"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_privacy" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfilePrivacy"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfilePrivacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfilePrivacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Manage your privacy settings"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Notification Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileNotification"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_notification" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileNotification"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notification"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Manage your notifications"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Chat Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileChat"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_chat" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileChat"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Manage chat settings"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Schedule Reminder Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileScheduleReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileScheduleReminder"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_reminder" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileScheduleReminder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileScheduleReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule Reminder"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileScheduleReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Set your schedule reminders"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- App Language Section -->
+        <RelativeLayout
+            android:id="@+id/layoutProfileAppLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/imageProfileAppLanguage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_language" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageProfileAppLanguage"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfileAppLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App Language"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/hintProfileAppLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Select your app language"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
