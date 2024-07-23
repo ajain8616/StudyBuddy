@@ -37,6 +37,9 @@ android {
 }
 
 dependencies {
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+
+
     implementation ("com.google.firebase:firebase-storage:20.0.1")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation(libs.androidx.legacy.support.v4)

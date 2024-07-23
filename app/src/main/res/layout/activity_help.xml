@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".HelpActivity">
 
     <!-- Heading Text -->
@@ -15,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:lineSpacingExtra="8sp"
+        android:layout_marginTop="10dp"
+        android:lineSpacingExtra="5sp"
         android:text="@string/test_procedure"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -29,7 +28,7 @@
         android:layout_height="150dp"
         android:layout_below="@id/headingText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="9dp"
         android:contentDescription="@string/procedure_image"
         android:src="@drawable/ic_design" />
 
@@ -54,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/visualAcuityHeading"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
         android:text="@string/visual_acuity_description"
         android:textSize="14sp" />
 
@@ -158,7 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/feedbackDescription"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="1dp"
         android:text="@string/instruction_checkbox"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -171,7 +170,6 @@
         android:layout_below="@id/instructionCheckBox"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:layout_marginTop="1dp"
         android:orientation="horizontal">
 
         <!-- Start Test Button -->
@@ -179,13 +177,10 @@
             android:id="@+id/startTestButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:backgroundTint="@color/black"
             android:text="@string/start_test_button"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>

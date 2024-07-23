@@ -21,16 +21,14 @@ class HelpActivity : AppCompatActivity() {
 
         startButton.setOnClickListener {
             if (checkBox.isChecked) {
-                val homeFragment = HomeFragment()
-                supportFragmentManager.beginTransaction().apply {
-                    replace(R.id.fragment_container, homeFragment)
-                    addToBackStack(null)
-                    commit()
-                }
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, "Please read and accept the instructions.", Toast.LENGTH_SHORT).show()
             }
         }
+
 
     }
 }
