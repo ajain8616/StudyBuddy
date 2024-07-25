@@ -9,10 +9,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     private lateinit var email: EditText
     private lateinit var password: EditText
@@ -25,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
@@ -78,14 +81,47 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    // Check two-step verification status after successful login
+                    checkTwoStepVerificationStatus()
                 } else {
                     Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun checkTwoStepVerificationStatus() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            db.collection("users").document(userId)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val isTwoStepEnabled = document.getBoolean("twoStepVerificationEnabled") ?: false
+                        if (isTwoStepEnabled) {
+                            redirect("VERIFICATION")
+                        } else {
+                            redirect("MAIN")
+                        }
+                    } else {
+                        Toast.makeText(this, "User document not found.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Failed to retrieve user data", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+    private fun redirect(name: String) {
+        val intent = Intent(
+            this, when (name) {
+                "MAIN" -> MainActivity::class.java
+                "VERIFICATION" -> VerificationCodeActivity::class.java
+                else -> throw Exception("No path exists")
+            }
+        )
+        startActivity(intent)
+        finish()
     }
 
     private fun showForgotPasswordDialog() {
