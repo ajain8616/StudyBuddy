@@ -2,6 +2,7 @@ package com.arihant.studybuddy
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -21,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var forgotPassword: TextView
     private lateinit var signupPrompt: TextView
+    private lateinit var verificationLink: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +36,9 @@ class LoginActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.loginButton)
         forgotPassword = findViewById(R.id.forgotPassword)
         signupPrompt = findViewById(R.id.signupPrompt)
+        verificationLink = findViewById(R.id.verificationLink)
+
+        checkEmailVerificationStatus()
 
         loginButton.setOnClickListener {
             val emailText = email.text.toString().trim()
@@ -52,6 +57,10 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        verificationLink.setOnClickListener {
+            sendEmailVerification()
         }
     }
 
@@ -122,6 +131,31 @@ class LoginActivity : AppCompatActivity() {
         )
         startActivity(intent)
         finish()
+    }
+
+    private fun checkEmailVerificationStatus() {
+        val user = auth.currentUser
+        if (user != null) {
+            if (user.isEmailVerified) {
+                verificationLink.visibility = View.GONE
+            } else {
+                verificationLink.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun sendEmailVerification() {
+        val user = auth.currentUser
+        if (user != null && !user.isEmailVerified) {
+            user.sendEmailVerification()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Verification email sent to ${user.email}", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Failed to send verification email: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
     }
 
     private fun showForgotPasswordDialog() {

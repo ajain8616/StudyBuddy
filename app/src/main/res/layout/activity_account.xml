@@ -72,16 +72,6 @@
                         android:text="Enable or disable two-step verification for added security" />
 
                 </LinearLayout>
-
-                <Switch
-                    android:id="@+id/switchTwoStepVerification"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
-                    android:visibility="gone"
-                    android:layout_marginEnd="8dp" />
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

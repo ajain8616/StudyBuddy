@@ -16,10 +16,10 @@ class VerificationCodeActivity : AppCompatActivity() {
     private lateinit var etDigit3: EditText
     private lateinit var etDigit4: EditText
     private lateinit var etDigit5: EditText
-    private lateinit var etDigit6: EditText
     private lateinit var btnSubmitVerification: Button
     private lateinit var btnVerification: Button
     private val db = FirebaseFirestore.getInstance()
+    private var auth = FirebaseAuth.getInstance()
     private val userId = FirebaseAuth.getInstance().currentUser?.uid
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,9 +32,9 @@ class VerificationCodeActivity : AppCompatActivity() {
         etDigit3 = findViewById(R.id.etDigit3)
         etDigit4 = findViewById(R.id.etDigit4)
         etDigit5 = findViewById(R.id.etDigit5)
-        etDigit6 = findViewById(R.id.etDigit6)
         btnSubmitVerification = findViewById(R.id.btnSubmitVerification)
         btnVerification = findViewById(R.id.btnVerification)
+        auth = FirebaseAuth.getInstance()
 
         // Check if two-step verification is enabled and configure UI accordingly
         checkTwoStepVerificationStatus()
@@ -43,16 +43,7 @@ class VerificationCodeActivity : AppCompatActivity() {
         btnSubmitVerification.setOnClickListener {
             val verificationCode = getVerificationCode()
             if (verificationCode.isNotEmpty() && userId != null) {
-                if (btnVerification.visibility == Button.GONE) {
-                    // If verification is disabled, save the verification code
-                    saveVerificationCode(verificationCode)
-                    // Show btnVerification after saving the code and hide btnSubmitVerification
-                    btnVerification.visibility = Button.VISIBLE
-                    btnSubmitVerification.visibility = Button.GONE
-                } else {
-                    // If verification is enabled, verify the code
-                    verifyCode(verificationCode)
-                }
+                saveVerificationCode(verificationCode)
             } else {
                 Toast.makeText(this, "Please enter a valid code", Toast.LENGTH_SHORT).show()
             }
@@ -74,8 +65,7 @@ class VerificationCodeActivity : AppCompatActivity() {
                 etDigit2.text.toString() +
                 etDigit3.text.toString() +
                 etDigit4.text.toString() +
-                etDigit5.text.toString() +
-                etDigit6.text.toString()
+                etDigit5.text.toString()
     }
 
     private fun saveVerificationCode(code: String) {
@@ -85,8 +75,9 @@ class VerificationCodeActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Verification code saved successfully", Toast.LENGTH_SHORT).show()
                     // Show btnVerification after saving the code and hide btnSubmitVerification
-                    btnVerification.visibility = Button.VISIBLE
-                    btnSubmitVerification.visibility = Button.GONE
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    auth.signOut()
+                    btnVerification.visibility = Button.GONE
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Failed to save verification code", Toast.LENGTH_SHORT).show()
@@ -103,7 +94,7 @@ class VerificationCodeActivity : AppCompatActivity() {
                     if (code == storedCode) {
                         Toast.makeText(this, "Verification successful", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, MainActivity::class.java))
-                        // Proceed with further actions after successful verification
+                        finish()
                     } else {
                         Toast.makeText(this, "Verification failed", Toast.LENGTH_SHORT).show()
                     }
@@ -122,12 +113,13 @@ class VerificationCodeActivity : AppCompatActivity() {
                     val isTwoStepEnabled = document.getBoolean("twoStepVerificationEnabled") ?: false
                     val storedCode = document.getString("twoStepVerificationCode")
 
-                    if (isTwoStepEnabled) {
+                    if (isTwoStepEnabled && !storedCode.isNullOrEmpty()) {
                         btnVerification.visibility = Button.VISIBLE
+                        btnSubmitVerification.visibility = Button.GONE
                     } else {
                         btnVerification.visibility = Button.GONE
-                        // Prompt user to enter and submit a code even if verification is disabled
-                        if (storedCode.isNullOrEmpty()) {
+                        btnSubmitVerification.visibility = Button.VISIBLE
+                        if (!isTwoStepEnabled) {
                             Toast.makeText(this, "Two-Step Verification is disabled, but please enter a code", Toast.LENGTH_SHORT).show()
                         }
                     }

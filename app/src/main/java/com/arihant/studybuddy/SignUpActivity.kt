@@ -50,10 +50,6 @@ class SignUpActivity : AppCompatActivity() {
             if (validateInputs(name, emailText, passwordText, confirmPasswordText, userType)) {
                 signUpUser(name, emailText, passwordText, userType)
             }
-
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
         }
 
         loginPrompt.setOnClickListener {
@@ -122,7 +118,7 @@ class SignUpActivity : AppCompatActivity() {
 
                                 firestore.collection("users").document(userId).set(userMap)
                                     .addOnSuccessListener {
-                                        Toast.makeText(this, "Sign Up Successful. Please verify your email.", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(this, "Sign Up Successful. Verify your email ID $email for login.", Toast.LENGTH_SHORT).show()
                                         val intent = Intent(this, LoginActivity::class.java)
                                         startActivity(intent)
                                         finish()
@@ -140,4 +136,3 @@ class SignUpActivity : AppCompatActivity() {
             }
     }
 }
-
