@@ -23,15 +23,27 @@
         app:layout_constraintVertical_bias="0.1">
 
         <!-- Logo -->
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/ic_logo"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileImageCard"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_logo"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
 
         <!-- Title -->
         <TextView
@@ -40,12 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logo" />
+            app:layout_constraintTop_toBottomOf="@id/profileImageCard" />
 
         <!-- Full Name Input -->
         <EditText
@@ -55,7 +67,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             android:inputType="textPersonName"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +83,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +99,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +115,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,19 +140,19 @@
                 android:id="@+id/schoolStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="School Student" />
+                android:text="@string/school_student" />
 
             <RadioButton
                 android:id="@+id/collegeStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="College Student" />
+                android:text="@string/college_student" />
 
             <RadioButton
                 android:id="@+id/workingProfessional"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Working Professional"  />
+                android:text="@string/working_professional"  />
         </RadioGroup>
 
         <!-- Sign Up Button -->
@@ -151,7 +163,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textColor="@android:color/white"
             android:paddingHorizontal="24dp"
             android:paddingVertical="12dp"
@@ -166,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Already have an account? Log in"
+            android:text="@string/already_have_an_account_log_in"
             android:textColor="@android:color/white"
             android:textSize="15sp"
             android:textStyle="bold"

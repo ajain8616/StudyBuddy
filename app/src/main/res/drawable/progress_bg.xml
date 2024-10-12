@@ -13,14 +13,14 @@
         android:useLevel="false">
 
         <size
-            android:width="76dip"
-            android:height="76dip" />
+            android:width="76dp"
+            android:height="76dp" />
 
         <gradient
             android:angle="0"
-            android:endColor="#91EAE4"
-            android:centerColor="#7F7FD5"
-            android:startColor="#FF80AB"
+            android:endColor="#00C9FF"
+            android:centerColor="#92FE9D"
+            android:startColor="#FF5858"
             android:type="sweep"
             android:useLevel="false" />
     </shape>

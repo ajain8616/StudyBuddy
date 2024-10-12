@@ -28,6 +28,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -49,7 +50,7 @@
                     android:id="@+id/textProfileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Account"
+                    android:text="@string/account"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -57,7 +58,7 @@
                     android:id="@+id/hintProfileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Two-step verification"
+                    android:hint="@string/two_step_verification"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -71,6 +72,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -92,7 +94,7 @@
                     android:id="@+id/textProfileAvatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Avatar"
+                    android:text="@string/avatar"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -100,7 +102,7 @@
                     android:id="@+id/hintProfileAvatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Upload your avatar"
+                    android:hint="@string/upload_your_avatar"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -114,6 +116,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -135,7 +138,7 @@
                     android:id="@+id/textProfilePrivacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Privacy"
+                    android:text="@string/privacy"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -143,7 +146,7 @@
                     android:id="@+id/hintProfilePrivacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Manage your privacy settings"
+                    android:hint="@string/manage_your_privacy_settings"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -157,6 +160,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -178,7 +182,7 @@
                     android:id="@+id/textProfileNotification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Notification"
+                    android:text="@string/notification"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -186,7 +190,7 @@
                     android:id="@+id/hintProfileNotification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Manage your notifications"
+                    android:hint="@string/manage_your_notifications"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -200,6 +204,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -221,7 +226,7 @@
                     android:id="@+id/textProfileChat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chat"
+                    android:text="@string/chat"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -229,7 +234,7 @@
                     android:id="@+id/hintProfileChat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Manage chat settings"
+                    android:hint="@string/manage_chat_settings"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -243,6 +248,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -264,7 +270,7 @@
                     android:id="@+id/textProfileScheduleReminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Schedule Reminder"
+                    android:text="@string/schedule_reminder"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -272,7 +278,7 @@
                     android:id="@+id/hintProfileScheduleReminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Set your schedule reminders"
+                    android:hint="@string/set_your_schedule_reminders"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -286,6 +292,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -307,7 +314,7 @@
                     android:id="@+id/textProfileAppLanguage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="App Language"
+                    android:text="@string/app_language"
                     android:textStyle="bold"
                     android:textSize="19sp" />
 
@@ -315,7 +322,7 @@
                     android:id="@+id/hintProfileAppLanguage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Select your app language"
+                    android:hint="@string/select_your_app_language"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>

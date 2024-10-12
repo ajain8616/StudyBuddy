@@ -1,20 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme for light mode. -->
     <style name="Base.Theme.StudyBuddy" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors for the light theme -->
         <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryVariant">@color/blue_dark</item>
-        <item name="android:statusBarColor">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue_light</item>
+        <item name="android:statusBarColor">@color/blue_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary colors for the light theme -->
         <item name="colorSecondary">@color/red</item>
         <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Accent color -->
         <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="colorPrimaryContainer">@color/blue_light</item>
-        <item name="colorOnPrimaryContainer">@color/black</item>
-        <item name="colorSecondaryContainer">@color/light_blue</item>
-        <item name="colorOnSecondaryContainer">@color/black</item>
+
+        <!-- Input Text Colors -->
+        <item name="android:textColorPrimary">@color/black</item>
+
     </style>
 
     <style name="Theme.StudyBuddy" parent="Base.Theme.StudyBuddy" />
+
+    <!-- Custom style for active indicator in bottom navigation -->
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/colorRose</item>
     </style>

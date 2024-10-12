@@ -1,6 +1,8 @@
 package com.arihant.studybuddy
 
 import android.os.Bundle
+import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo.RangeInfo
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RadioButton
@@ -45,6 +47,12 @@ class PrivacyActivity : AppCompatActivity() {
     private lateinit var imageDisappearingMessages: ImageView
     private lateinit var textDisappearingMessages: TextView
     private lateinit var hintDisappearingMessages: TextView
+    private lateinit var layoutDMVisibility:LinearLayout
+    private lateinit var rd24hours:RadioButton
+    private lateinit var rdrd7days:RadioButton
+    private lateinit var rd90days:RadioButton
+    private lateinit var rbOff:RadioButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +61,8 @@ class PrivacyActivity : AppCompatActivity() {
         // Initialize all views
         initializeViews()
 
+        // Set click listeners
+        setClickListeners()
     }
 
     private fun initializeViews() {
@@ -90,6 +100,74 @@ class PrivacyActivity : AppCompatActivity() {
         imageDisappearingMessages = findViewById(R.id.imageDisappearingMessages)
         textDisappearingMessages = findViewById(R.id.textDisappearingMessages)
         hintDisappearingMessages = findViewById(R.id.hintDisappearingMessages)
+        layoutDMVisibility = findViewById(R.id.layoutDMVisibility)
+        rdrd7days = findViewById(R.id.rd7days)
+        rd90days = findViewById(R.id.rd90days)
+        rd24hours = findViewById(R.id.rd24hours)
+        rbOff = findViewById(R.id.rbOff)
     }
 
+    private fun setClickListeners() {
+        layoutLastSeen.setOnClickListener {
+            toggleSpecificLayout(mainRadioLinearLayout)
+            toggleVisibility(
+                layoutProfilePhoto,
+                layoutStatus,
+                layoutReadReceipts,
+                layoutDisappearingMessages
+            )
+        }
+
+        layoutProfilePhoto.setOnClickListener {
+            toggleSpecificLayout(layoutProfilePhotoVisibility)
+            toggleVisibility(
+                layoutLastSeen,
+                layoutStatus,
+                layoutReadReceipts,
+                layoutDisappearingMessages
+            )
+        }
+
+        layoutStatus.setOnClickListener {
+            toggleSpecificLayout(layoutStatusVisibility)
+            toggleVisibility(
+                layoutLastSeen,
+                layoutProfilePhoto,
+                layoutReadReceipts,
+                layoutDisappearingMessages
+            )
+        }
+
+        layoutReadReceipts.setOnClickListener {
+            // Add functionality here if needed
+        }
+
+        layoutDisappearingMessages.setOnClickListener {
+            toggleSpecificLayout(layoutDMVisibility)
+            toggleVisibility(
+                layoutLastSeen,
+                layoutProfilePhoto,
+                layoutStatus,
+                layoutReadReceipts
+            )
+
+        }
+    }
+
+    private fun toggleVisibility(vararg layoutsToHide: View) {
+        val isVisible = layoutsToHide.any { it.visibility == View.VISIBLE }
+        if (isVisible) {
+            layoutsToHide.forEach { it.visibility = View.GONE }
+        } else {
+            layoutsToHide.forEach { it.visibility = View.VISIBLE }
+        }
+    }
+
+    private fun toggleSpecificLayout(layout: View) {
+        if (layout.visibility == View.VISIBLE) {
+            layout.visibility = View.GONE
+        } else {
+            layout.visibility = View.VISIBLE
+        }
+    }
 }

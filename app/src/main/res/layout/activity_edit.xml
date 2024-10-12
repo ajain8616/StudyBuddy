@@ -24,15 +24,26 @@
         app:layout_constraintVertical_bias="0.304">
 
         <!-- Logo -->
-        <ImageView
-            android:id="@+id/imageProfile"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileImageCard"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/ic_profile"
+            app:cardCornerRadius="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
 
         <!-- Title -->
         <TextView
@@ -41,12 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
-            android:text="Edit Profile"
+            android:text="@string/edit_profile"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageProfile" />
+            app:layout_constraintTop_toBottomOf="@id/profileImageCard" />
 
         <!-- Full Name Input -->
         <EditText
@@ -57,7 +68,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,21 +107,21 @@
                 android:id="@+id/rbSchoolStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="School Student"
+                android:text="@string/school_student"
                 android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/rbCollegeStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="College Student"
+                android:text="@string/college_student"
                 android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/rbWorkingProfessional"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Working Professional"
+                android:text="@string/working_professional"
                 android:textColor="@color/white" />
         </RadioGroup>
 
@@ -123,7 +134,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Update Profile"
+            android:text="@string/update_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editRole"

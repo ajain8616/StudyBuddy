@@ -38,28 +38,25 @@ class AvatarActivity : AppCompatActivity() {
             generateRandomAvatars()
         }
 
-        // Initial load
-        generateRandomAvatars()
-    }
+        }
 
     private fun generateRandomAvatars() {
         val client = OkHttpClient()
         val handler = Handler(Looper.getMainLooper())
 
-        // Hide RecyclerView and show ProgressBar
-        avatarRecyclerView.visibility = RecyclerView.GONE
+        // Show ProgressBar and reset progress
         progressBar.visibility = ProgressBar.VISIBLE
+        progressBar.progress = 0
 
         // Clear existing avatars
         avatars.clear()
         avatarAdapter.notifyDataSetChanged()
 
-        // Generate avatars with a delay to simulate loading time
         handler.postDelayed({
-            for (i in 1..20) {
+            for (i in 1..25) {
                 val randomName = generateRandomString()
-                val url = "https://robohash.org/$randomName.png"
-
+                val randomSet = (1..4).random()
+                val url = "https://robohash.org/$randomName?set=set$randomSet"
                 val request = Request.Builder().url(url).build()
 
                 client.newCall(request).enqueue(object : okhttp3.Callback {
@@ -75,6 +72,10 @@ class AvatarActivity : AppCompatActivity() {
                                     avatars.add(Avatar(randomName, bitmap))
                                     avatarAdapter.notifyItemInserted(avatars.size - 1)
 
+                                    // Update progress as each avatar loads
+                                    val progress = (avatars.size * 4) // Progress logic
+                                    progressBar.progress = progress.coerceAtMost(100)
+
                                     // Scroll to the first item if it's the first update
                                     if (avatars.size == 25) {
                                         avatarRecyclerView.scrollToPosition(0)
@@ -86,13 +87,15 @@ class AvatarActivity : AppCompatActivity() {
                 })
             }
 
-            // Hide ProgressBar and show RecyclerView after 5 seconds
+            // Hide ProgressBar and show RecyclerView after all avatars are loaded
             handler.postDelayed({
                 progressBar.visibility = ProgressBar.GONE
                 avatarRecyclerView.visibility = RecyclerView.VISIBLE
-            }, 2000)
+            }, 22000)
         }, 2000)
     }
+
+
 
     private fun generateRandomString(length: Int = 8): String {
         val chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

@@ -28,29 +28,37 @@
             android:gravity="center"
             android:paddingTop="3dp">
 
-            <ImageView
-                android:id="@+id/profileImageViewProfile"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="0dp"
-                android:src="@drawable/ic_profile" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileImageCard"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="60dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:id="@+id/profileImageViewProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_profile"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center" />
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/usernameProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileImageViewProfile"
+                android:layout_below="@+id/profileImageCard"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:hint="ABCD"
+                android:hint="@string/abcd"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -86,7 +94,7 @@
                     android:layout_below="@+id/aboutButtonProfile"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="3dp"
-                    android:text="About"
+                    android:text="@string/about"
                     android:textStyle="bold"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -101,6 +109,7 @@
                 android:layout_marginBottom="30dp"
                 android:layout_toEndOf="@+id/aboutButtonLayoutProfile"
                 android:clickable="true"
+                android:focusable="true"
                 android:gravity="center">
 
                 <ImageView
@@ -116,7 +125,7 @@
                     android:layout_below="@+id/editButtonProfile"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="3dp"
-                    android:text="Edit"
+                    android:text="@string/edit"
                     android:textStyle="bold"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -130,6 +139,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_toStartOf="@+id/aboutButtonLayoutProfile"
                 android:clickable="true"
+                android:focusable="true"
                 android:gravity="center">
 
                 <ImageView
@@ -144,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/settingsButtonProfile"
                     android:layout_marginTop="3dp"
-                    android:text="Settings"
+                    android:text="@string/settings"
                     android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -161,6 +171,7 @@
             android:layout_marginTop="25dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:padding="5dp"
             android:paddingEnd="10dp">
@@ -184,7 +195,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/stImage1Profile"
                 android:gravity="start"
-                android:text="Email id "
+                android:text="@string/email_id"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -197,7 +208,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@+id/stImage1Profile"
                 android:gravity="start"
-                android:hint="abcd@gmail.com"
+                android:hint="@string/abcd_gmail_com"
                 android:textSize="14sp" />
         </RelativeLayout>
 
@@ -211,6 +222,7 @@
             android:layout_marginTop="25dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:padding="5dp">
 
@@ -233,7 +245,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/stImage2Profile"
                 android:gravity="start"
-                android:text="Role"
+                android:text="@string/role"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -246,7 +258,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@+id/stImage2Profile"
                 android:gravity="start"
-                android:hint="college Student"
+                android:hint="@string/college_student"
                 android:textSize="14sp" />
         </RelativeLayout>
 
@@ -260,6 +272,7 @@
             android:layout_marginTop="25dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:padding="5dp">
 
@@ -282,7 +295,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/stImage3Profile"
                 android:gravity="start"
-                android:text="Need Help"
+                android:text="@string/need_help"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -295,7 +308,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@+id/stImage3Profile"
                 android:gravity="start"
-                android:hint="by click on this you can get help"
+                android:hint="@string/by_click_on_this_you_can_get_help"
                 android:textSize="14sp" />
         </RelativeLayout>
 
@@ -309,6 +322,7 @@
             android:layout_marginTop="25dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:padding="5dp">
 
@@ -331,7 +345,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_toEndOf="@+id/stImage4Profile"
                 android:gravity="start"
-                android:text="Logout"
+                android:text="@string/logout"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -344,7 +358,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_toEndOf="@+id/stImage4Profile"
                 android:gravity="start"
-                android:text="Logout from the App"
+                android:text="@string/logout_from_the_app"
                 android:textSize="14sp" />
         </RelativeLayout>
     </RelativeLayout>

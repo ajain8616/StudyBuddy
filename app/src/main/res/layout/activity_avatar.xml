@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_centerInParent="true"
-        android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progress_bg"
         android:max="100"
         android:progress="0"
@@ -33,11 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+
     <Button
         android:id="@+id/generateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Generate Random Avatar"
+        android:text="@string/generate_random_avatar"
         android:layout_marginBottom="16dp"
         android:textColor="@color/white"
         android:backgroundTint="@color/black"

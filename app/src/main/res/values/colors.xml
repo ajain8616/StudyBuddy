@@ -83,7 +83,17 @@
     <color name="primaryColor">#6200EE</color>
     <color name="primaryDarkColor">#3700B3</color>
     <color name="accentColor">#03DAC5</color>
+    <color name="red_dark">#B71C1C</color>
+    <color name="grey">#BDBDBD</color>
 
+    <color name="whatsapp_header_background">#075E54</color>
+    <color name="whatsapp_text_primary">#FFFFFF</color>
+    <color name="whatsapp_icon_tint">#FFFFFF</color>
+    <color name="whatsapp_primary_green">#25D366</color>
+    <color name="whatsapp_text_background">#0C956D</color>
+    <color name="edittext_border_color">#BDBDBD</color>
+    <color name="whatsapp_green">#25D366</color>
+    <color name="receiver_message_color">#EAEAEA</color>
 
 
 </resources>

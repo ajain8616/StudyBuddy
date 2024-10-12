@@ -2,6 +2,10 @@ package com.arihant.studybuddy
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -36,6 +40,9 @@ class VerificationCodeActivity : AppCompatActivity() {
         btnVerification = findViewById(R.id.btnVerification)
         auth = FirebaseAuth.getInstance()
 
+        // Add TextWatchers to EditTexts
+        setupEditTexts()
+
         // Check if two-step verification is enabled and configure UI accordingly
         checkTwoStepVerificationStatus()
 
@@ -60,6 +67,44 @@ class VerificationCodeActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupEditTexts() {
+        addTextWatcher(etDigit1, null, etDigit2)
+        addTextWatcher(etDigit2, etDigit1, etDigit3)
+        addTextWatcher(etDigit3, etDigit2, etDigit4)
+        addTextWatcher(etDigit4, etDigit3, etDigit5)
+        addTextWatcher(etDigit5, etDigit4, null)
+    }
+
+    private fun addTextWatcher(currentEditText: EditText, previousEditText: EditText?, nextEditText: EditText?) {
+        currentEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                if (!s.isNullOrEmpty() && nextEditText != null) {
+                    nextEditText.requestFocus() // Move to next EditText when input is entered
+                }
+            }
+        })
+
+        currentEditText.setOnKeyListener { _, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_DOWN) {
+                if (currentEditText.text.isEmpty() && previousEditText != null) {
+                    previousEditText.requestFocus() // Move to previous EditText when backspace is pressed
+                }
+            }
+            false
+        }
+
+        currentEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE && previousEditText != null) {
+                previousEditText.requestFocus()
+            }
+            false
+        }
+    }
+
     private fun getVerificationCode(): String {
         return etDigit1.text.toString() +
                 etDigit2.text.toString() +
@@ -74,7 +119,6 @@ class VerificationCodeActivity : AppCompatActivity() {
                 .update("twoStepVerificationCode", code)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Verification code saved successfully", Toast.LENGTH_SHORT).show()
-                    // Show btnVerification after saving the code and hide btnSubmitVerification
                     startActivity(Intent(this, LoginActivity::class.java))
                     auth.signOut()
                     btnVerification.visibility = Button.GONE

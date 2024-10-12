@@ -11,15 +11,27 @@
     tools:context=".IntroActivity">
 
     <!-- Logo -->
-    <ImageView
-        android:id="@+id/logo"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileImageCard"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/ic_logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_logo"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
+
 
     <!-- Title -->
     <TextView
@@ -29,7 +41,7 @@
         android:text="@string/app_name"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/profileImageCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
@@ -39,7 +51,7 @@
         android:id="@+id/textView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="An Android app providing personalized study plans and collaborative features for school students, college students, and working professionals."
+        android:text="@string/an_android_app_providing_personalized_study_plans_and_collaborative_features_for_school_students_college_students_and_working_professionals"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -52,7 +64,7 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="StudyBuddy is a versatile Android app that offers personalized study plans, messaging capabilities, community forums, and a comprehensive subject list to help school students, college students, and professionals manage their learning schedules effectively. Enhance productivity and achieve your academic or professional goals with tailored plans, vibrant community interactions, and seamless communication. Join StudyBuddy to optimize your learning journey and succeed."
+        android:text="@string/studybuddy_is_a_versatile_android_app_that_offers_personalized_study_plans_messaging_capabilities_community_forums_and_a_comprehensive_subject_list_to_help_school_students_college_students_and_professionals_manage_their_learning_schedules_effectively_enhance_productivity_and_achieve_your_academic_or_professional_goals_with_tailored_plans_vibrant_community_interactions_and_seamless_communication_join_studybuddy_to_optimize_your_learning_journey_and_succeed"
         android:textSize="14sp"
         android:lineSpacingMultiplier="1.2"
         app:layout_constraintTop_toBottomOf="@id/textView1"
@@ -65,7 +77,7 @@
         android:id="@+id/btnGetStarted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Started"
+        android:text="@string/get_started"
         android:paddingHorizontal="32dp"
         android:paddingVertical="12dp"
         app:layout_constraintBottom_toBottomOf="parent"

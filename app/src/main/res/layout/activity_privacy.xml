@@ -21,7 +21,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="210dp"
-        android:text="Privacy Settings"
+        android:text="@string/privacy_settings"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +47,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -68,7 +69,7 @@
                     android:id="@+id/textLastSeen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Last Seen and Online"
+                    android:text="@string/last_seen_and_online"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -76,7 +77,7 @@
                     android:id="@+id/hintLastSeen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Manage who can see your last seen and online status"
+                    android:hint="@string/manage_who_can_see_your_last_seen_and_online_status"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -98,7 +99,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Who can see my last seen"
+                    android:text="@string/who_can_see_my_last_seen"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
@@ -107,25 +108,25 @@
                     android:id="@+id/rbEveryone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Everyone" />
+                    android:text="@string/everyone" />
 
                 <RadioButton
                     android:id="@+id/rbMyContacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Contacts" />
+                    android:text="@string/my_contacts" />
 
                 <RadioButton
                     android:id="@+id/rbMyContactsExcept"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Contacts Except..." />
+                    android:text="@string/my_contacts_except" />
 
                 <RadioButton
                     android:id="@+id/rbNobody"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nobody" />
+                    android:text="@string/nobody" />
             </LinearLayout>
 
             <!-- Who can see when I'm online -->
@@ -138,7 +139,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Who can see when I'm online"
+                    android:text="@string/who_can_see_when_i_m_online"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
@@ -147,13 +148,13 @@
                     android:id="@+id/rbSameAsLastSeen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Same as Last Seen" />
+                    android:text="@string/same_as_last_seen" />
 
                 <RadioButton
                     android:id="@+id/rbNobodyOnline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nobody" />
+                    android:text="@string/nobody" />
             </LinearLayout>
         </LinearLayout>
 
@@ -167,6 +168,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -188,7 +190,7 @@
                     android:id="@+id/textProfilePhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profile Photo"
+                    android:text="@string/profile_photo"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -196,7 +198,7 @@
                     android:id="@+id/hintProfilePhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Choose who can see your profile photo"
+                    android:hint="@string/choose_who_can_see_your_profile_photo"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -208,13 +210,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_below="@id/layoutProfilePhoto"
             android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Who can see my Profile Photo"
+                android:text="@string/who_can_see_my_profile_photo"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp"/>
@@ -223,25 +224,25 @@
                 android:id="@+id/rbProfileEveryone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Everyone" />
+                android:text="@string/everyone" />
 
             <RadioButton
                 android:id="@+id/rbProfileMyContacts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Contacts" />
+                android:text="@string/my_contacts" />
 
             <RadioButton
                 android:id="@+id/rbProfileMyContactsExcept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Contacts Except..." />
+                android:text="@string/my_contacts_except" />
 
             <RadioButton
                 android:id="@+id/rbProfileNobody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nobody" />
+                android:text="@string/nobody" />
         </LinearLayout>
 
 
@@ -254,6 +255,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -275,7 +277,7 @@
                     android:id="@+id/textStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text="@string/status"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -283,7 +285,7 @@
                     android:id="@+id/hintStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Control who can see your status updates"
+                    android:hint="@string/control_who_can_see_your_status_updates"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -294,13 +296,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_below="@id/layoutStatus"
             android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Who can see my Status Updates"
+                android:text="@string/who_can_see_my_status_updates"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp"/>
@@ -309,25 +310,25 @@
                 android:id="@+id/rbStatusEveryone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Everyone" />
+                android:text="@string/everyone" />
 
             <RadioButton
                 android:id="@+id/rbStatusMyContacts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Contacts" />
+                android:text="@string/my_contacts" />
 
             <RadioButton
                 android:id="@+id/rbStatusMyContactsExcept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Contacts Except..." />
+                android:text="@string/my_contacts_except" />
 
             <RadioButton
                 android:id="@+id/rbStatusNobody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nobody" />
+                android:text="@string/nobody" />
         </LinearLayout>
 
 
@@ -340,6 +341,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
+            android:focusable="true"
             android:padding="12dp">
 
             <ImageView
@@ -361,7 +363,7 @@
                     android:id="@+id/textReadReceipts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Read Receipts"
+                    android:text="@string/read_receipts"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -369,7 +371,7 @@
                     android:id="@+id/hintReadReceipts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Turn off read receipts"
+                    android:hint="@string/turn_off_read_receipts"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -384,7 +386,7 @@
             android:layout_marginBottom="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:padding="12dp">
+            android:focusable="true" android:padding="12dp">
 
             <ImageView
                 android:id="@+id/imageDisappearingMessages"
@@ -405,7 +407,7 @@
                     android:id="@+id/textDisappearingMessages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DisappearingMessages"
+                    android:text="@string/disappearingmessages"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -413,11 +415,50 @@
                     android:id="@+id/hintDisappearingMessages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Turn off read receipts"
+                    android:hint="@string/turn_off_read_receipts"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutDMVisibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="8dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_new_chats_with_a_disappearing_messages_timer_set_to"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rd24hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_24_hours" />
+
+            <RadioButton
+                android:id="@+id/rd7days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_7_days" />
+
+            <RadioButton
+                android:id="@+id/rd90days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_90_days" />
+
+            <RadioButton
+                android:id="@+id/rbOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/off" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

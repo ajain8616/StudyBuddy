@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Account Settings"
+        android:text="@string/account_settings"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -61,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="Two Step Verification"
+                        android:text="@string/two_step_verification"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="Enable or disable two-step verification for added security" />
+                        android:text="@string/enable_or_disable_two_step_verification_for_added_security" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Delete Account"
+                    android:text="@string/delete_account"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Permanently delete your account and all associated data" />
+                    android:text="@string/permanently_delete_your_account_and_all_associated_data" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -132,7 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Additional Account Settings"
+                    android:text="@string/additional_account_settings"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -141,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Manage additional settings for your account" />
+                    android:text="@string/manage_additional_settings_for_your_account" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -183,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile Avatar"
+                    android:text="@string/profile_avatar"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -210,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile Privacy"
+                    android:text="@string/profile_privacy"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -237,7 +237,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile Notification"
+                    android:text="@string/profile_notification"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -264,7 +264,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile Chat"
+                    android:text="@string/profile_chat"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -291,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile Schedule Reminder"
+                    android:text="@string/profile_schedule_reminder"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -318,7 +318,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Profile App Language"
+                    android:text="@string/profile_app_language"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
