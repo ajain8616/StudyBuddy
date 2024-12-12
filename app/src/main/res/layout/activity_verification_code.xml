@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/background_gradient"
     android:padding="24dp"
-    tools:context=".VerificationCodeActivity"
+    tools:context=".activities.VerificationCodeActivity"
     android:gravity="center">
 
     <TextView

@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChattingActivity">
+    tools:context=".activities.ChattingActivity">
 
     <!-- Background Image -->
     <ImageView

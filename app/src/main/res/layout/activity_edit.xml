@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/background_gradient"
     android:layout_height="match_parent"
-    tools:context=".EditActivity">
+    tools:context=".activities.EditActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
