@@ -7,9 +7,6 @@
                 android:centerColor="#7F7FD5"
                 android:endColor="#91EAE4"
                 android:angle="45"/>
-            <stroke
-                android:width="7dp"
-                android:color="@color/colorDodgerBlue"/>
         </shape>
     </item>
 </layer-list>

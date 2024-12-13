@@ -23,6 +23,6 @@
 
     <!-- Custom style for active indicator in bottom navigation -->
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/colorRose</item>
+        <item name="android:color">@color/colorLightPurple</item>
     </style>
 </resources>

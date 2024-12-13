@@ -7,11 +7,12 @@ import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.arihant.studybuddy.R
+import com.google.android.material.button.MaterialButton
 
 class HelpActivity : AppCompatActivity() {
 
     private lateinit var checkBox:CheckBox
-    private lateinit var startButton: Button
+    private lateinit var startButton: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

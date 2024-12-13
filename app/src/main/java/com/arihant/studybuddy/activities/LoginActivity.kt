@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.arihant.studybuddy.R
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -20,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var email: EditText
     private lateinit var password: EditText
-    private lateinit var loginButton: Button
+    private lateinit var loginButton: MaterialButton
     private lateinit var forgotPassword: TextView
     private lateinit var signupPrompt: TextView
     private lateinit var verificationLink: TextView

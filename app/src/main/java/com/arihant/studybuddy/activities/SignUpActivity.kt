@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.arihant.studybuddy.R
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -18,7 +19,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var confirmPassword: EditText
     private lateinit var userTypeGroup: RadioGroup
-    private lateinit var signUpButton: Button
+    private lateinit var signUpButton: MaterialButton
     private lateinit var loginPrompt: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {

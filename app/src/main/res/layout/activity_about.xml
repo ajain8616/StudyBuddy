@@ -1,108 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@android:color/white">
 
-    <!-- Top Guideline -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_guideline"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp" />
+        android:padding="20dp">
 
-    <!-- Bottom Guideline -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottom_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="16dp" />
+        <!-- Top Guideline -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="24dp" />
 
-    <!-- About Title -->
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/about"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintVertical_chainStyle="packed"/>
+        <!-- Bottom Guideline -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="24dp" />
 
-    <!-- What is StudyBuddy Title -->
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/what_is_studybuddy"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textView8"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <!-- About Title -->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/about"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintVertical_chainStyle="packed"/>
 
-    <!-- StudyBuddy Description -->
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/studybuddy_is_the_ultimate_study_planning_and_community_platform_designed_for_students_and_professionals_alike_tailored_study_plans_ensure_you_stay_organized_and_on_track_with_your_academic_or_professional_goals_engage_in_vibrant_communities_to_share_insights_and_collaborate_with_peers_while_messaging_features_provide_seamless_communication_for_support_and_guidance_whether_you_re_a_school_student_college_attendee_or_a_working_professional_studybuddy_empowers_you_to_optimize_your_learning_journey_and_achieve_success"
-        android:textSize="14sp"
-        android:padding="5dp"
-        app:layout_constraintTop_toBottomOf="@id/textView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imageView" />
+        <!-- Divider Line -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView5"/>
 
-    <!-- StudyBuddy Image -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/about"
-        app:layout_constraintTop_toBottomOf="@id/textView8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textView9"
-        app:layout_constraintDimensionRatio="16:9"/>
+        <!-- What is StudyBuddy Title -->
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/what_is_studybuddy"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView8"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <!-- Important Note -->
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/important_note_nstudybuddy_is_designed_to_enhance_your_study_experience_by_providing_planning_tools_and_a_community_platform_however_it_is_crucial_to_recognize_that_studybuddy_is_not_a_substitute_for_professional_educational_advice_or_consultation_for_personalized_guidance_on_educational_planning_including_specific_academic_or_professional_concerns_we_recommend_consulting_with_educators_advisors_or_mentors_in_your_field_your_educational_success_and_well_being_are_our_priority_and_we_encourage_you_to_use_studybuddy_as_a_complement_to_not_a_replacement_for_professional_guidance_and_support"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textView10" />
+        <!-- StudyBuddy Description -->
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/studybuddy_is_the_ultimate_study_planning_and_community_platform_designed_for_students_and_professionals_alike_tailored_study_plans_ensure_you_stay_organized_and_on_track_with_your_academic_or_professional_goals_engage_in_vibrant_communities_to_share_insights_and_collaborate_with_peers_while_messaging_features_provide_seamless_communication_for_support_and_guidance_whether_you_re_a_school_student_college_attendee_or_a_working_professional_studybuddy_empowers_you_to_optimize_your_learning_journey_and_achieve_success"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:lineSpacingExtra="5dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintTop_toBottomOf="@id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imageView" />
 
-    <!-- Copyright Notice -->
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/copyright_2024_all_rights_reserved"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/textView9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <!-- StudyBuddy Image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/about"
+            android:contentDescription="@string/studybuddy_image"
+            app:layout_constraintTop_toBottomOf="@id/textView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView9"
+            app:layout_constraintDimensionRatio="16:9" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Divider Line -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView9" />
+
+        <!-- Important Note -->
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/important_note_nstudybuddy_is_designed_to_enhance_your_study_experience_by_providing_planning_tools_and_a_community_platform_however_it_is_crucial_to_recognize_that_studybuddy_is_not_a_substitute_for_professional_educational_advice_or_consultation_for_personalized_guidance_on_educational_planning_including_specific_academic_or_professional_concerns_we_recommend_consulting_with_educators_advisors_or_mentors_in_your_field_your_educational_success_and_well_being_are_our_priority_and_we_encourage_you_to_use_studybuddy_as_a_complement_to_not_a_replacement_for_professional_guidance_and_support"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@android:color/black"
+            android:lineSpacingExtra="6dp"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView10" />
+
+        <!-- Copyright Notice -->
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright_2024_all_rights_reserved"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/textView9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

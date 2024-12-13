@@ -94,7 +94,11 @@
     <color name="edittext_border_color">#BDBDBD</color>
     <color name="whatsapp_green">#25D366</color>
     <color name="receiver_message_color">#EAEAEA</color>
-
+    <color name="teal_200">#03DAC5</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="bottom_nav_background">#FFFFFF</color>
+    <color name="bottom_nav_icon_tint">#6200EE</color>
+    <color name="bottom_nav_text_color">#3700B3</color>
 
 </resources>
 

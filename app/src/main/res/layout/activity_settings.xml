@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,9 +9,12 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:background="@drawable/background_gradient"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".activities.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,6 +66,12 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
         <!-- Avatar Section -->
         <RelativeLayout
             android:id="@+id/layoutProfileAvatar"
@@ -107,6 +116,12 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
         <!-- Privacy Section -->
         <RelativeLayout
             android:id="@+id/layoutProfilePrivacy"
@@ -150,6 +165,14 @@
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
+
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
+
 
         <!-- Notification Section -->
         <RelativeLayout
@@ -195,6 +218,14 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
+
+
         <!-- Chat Section -->
         <RelativeLayout
             android:id="@+id/layoutProfileChat"
@@ -238,6 +269,14 @@
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
+
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
+
 
         <!-- Schedule Reminder Section -->
         <RelativeLayout
@@ -283,6 +322,14 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
+
+
         <!-- App Language Section -->
         <RelativeLayout
             android:id="@+id/layoutProfileAppLanguage"
@@ -326,6 +373,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
-
     </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
